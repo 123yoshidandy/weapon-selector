@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Weapon Selector for Splatoon3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p>スプラトゥーン3 ブキセレクター</p>
+    <p>射程：
+        <select id="range" name="range">
+            <option value="-1">おまかせ</option>
+            <option value="3">長い</option>
+            <option value="2">普通</option>
+            <option value="1">短い</option>
+        </select>
+    </p>
+
+    <p>キル：
+        <select id="kill" name="kill">
+        <option value="-1">おまかせ</option>
+        <option value="3">強い</option>
+        <option value="2">普通</option>
+        <option value="1">弱い</option>
+    </select>
+    </p>
+
+    <p>塗り：
+        <select id="ink" name="ink">
+        <option value="-1">おまかせ</option>
+        <option value="3">強い</option>
+        <option value="2">普通</option>
+        <option value="1">弱い</option>
+    </select>
+    </p>
+
+    <p>
+        <input type="submit" onclick="buttonClick();" />
+    </p>
+
+    <table id="result"></table>
+
+    <p><a href="https://github.com/123yoshidandy/weapon-selector/blob/main/README.md">このアプリについて</a></p>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
