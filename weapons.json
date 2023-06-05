@@ -97,6 +97,41 @@
         "ink": 2
     },
     {
+        "name": "スパッタリー",
+        "category": "マニューバー",
+        "range": 1,
+        "kill": 3,
+        "ink": 3
+    },
+    {
+        "name": "スプラマニューバー",
+        "category": "マニューバー",
+        "range": 1,
+        "kill": 2,
+        "ink": 2
+    },
+    {
+        "name": "クアッドホッパー",
+        "category": "マニューバー",
+        "range": 2,
+        "kill": 2,
+        "ink": 1
+    },
+    {
+        "name": "ケルビン525",
+        "category": "マニューバー",
+        "range": 2,
+        "kill": 2,
+        "ink": 1
+    },
+    {
+        "name": "デュアルスイーパー",
+        "category": "マニューバー",
+        "range": 2,
+        "kill": 2,
+        "ink": 2
+    },
+    {
         "name": "ノヴァブラスター",
         "category": "ブラスター",
         "range": 1,
@@ -146,6 +181,27 @@
         "ink": 2
     },
     {
+        "name": "パブロ",
+        "category": "フデ",
+        "range": 1,
+        "kill": 1,
+        "ink": 3
+    },
+    {
+        "name": "ホクサイ",
+        "category": "フデ",
+        "range": 1,
+        "kill": 2,
+        "ink": 2
+    },
+    {
+        "name": "フィンセント",
+        "category": "フデ",
+        "range": 1,
+        "kill": 2,
+        "ink": 1
+    },
+    {
         "name": "カーボンローラー",
         "category": "ローラー",
         "range": 1,
@@ -181,24 +237,108 @@
         "ink": 2
     },
     {
-        "name": "パブロ",
-        "category": "フデ",
-        "range": 1,
-        "kill": 1,
-        "ink": 3
-    },
-    {
-        "name": "ホクサイ",
-        "category": "フデ",
+        "name": "ヒッセン",
+        "category": "スロッシャー",
         "range": 1,
         "kill": 2,
         "ink": 2
     },
     {
-        "name": "フィンセント",
-        "category": "フデ",
+        "name": "スクリュースロッシャー",
+        "category": "スロッシャー",
+        "range": 2,
+        "kill": 2,
+        "ink": 2
+    },
+    {
+        "name": "バケットスロッシャー",
+        "category": "スロッシャー",
+        "range": 2,
+        "kill": 2,
+        "ink": 2
+    },
+    {
+        "name": "エクスプロッシャー",
+        "category": "スロッシャー",
+        "range": 3,
+        "kill": 1,
+        "ink": 3
+    },
+    {
+        "name": "オーバーフロッシャー",
+        "category": "スロッシャー",
+        "range": 3,
+        "kill": 1,
+        "ink": 2
+    },
+    {
+        "name": "ドライブワイパー",
+        "category": "ワイパー",
+        "range": 2,
+        "kill": 2,
+        "ink": 2
+    },
+    {
+        "name": "ジムワイパー",
+        "category": "ワイパー",
+        "range": 2,
+        "kill": 3,
+        "ink": 2
+    },
+    {
+        "name": "パラシェルター",
+        "category": "シェルター",
         "range": 1,
         "kill": 2,
+        "ink": 2
+    },
+    {
+        "name": "スパイガジェット",
+        "category": "シェルター",
+        "range": 1,
+        "kill": 1,
+        "ink": 2
+    },
+    {
+        "name": "キャンピングシェルター",
+        "category": "シェルター",
+        "range": 2,
+        "kill": 2,
+        "ink": 2
+    },
+    {
+        "name": "スプラスピナー",
+        "category": "スピナー",
+        "range": 2,
+        "kill": 2,
+        "ink": 3
+    },
+    {
+        "name": "ノーチラス47",
+        "category": "スピナー",
+        "range": 2,
+        "kill": 3,
+        "ink": 2
+    },
+    {
+        "name": "バレルスピナー",
+        "category": "スピナー",
+        "range": 3,
+        "kill": 2,
+        "ink": 3
+    },
+    {
+        "name": "クーゲルシュライバー",
+        "category": "スピナー",
+        "range": 3,
+        "kill": 2,
+        "ink": 3
+    },
+    {
+        "name": "ハイドラント",
+        "category": "スピナー",
+        "range": 3,
+        "kill": 3,
         "ink": 1
     },
     {
@@ -244,132 +384,6 @@
         "ink": 2
     },
     {
-        "name": "ヒッセン",
-        "category": "スロッシャー",
-        "range": 1,
-        "kill": 2,
-        "ink": 2
-    },
-    {
-        "name": "スクリュースロッシャー",
-        "category": "スロッシャー",
-        "range": 2,
-        "kill": 2,
-        "ink": 2
-    },
-    {
-        "name": "バケットスロッシャー",
-        "category": "スロッシャー",
-        "range": 2,
-        "kill": 2,
-        "ink": 2
-    },
-    {
-        "name": "エクスプロッシャー",
-        "category": "スロッシャー",
-        "range": 3,
-        "kill": 1,
-        "ink": 3
-    },
-    {
-        "name": "オーバーフロッシャー",
-        "category": "スロッシャー",
-        "range": 3,
-        "kill": 1,
-        "ink": 2
-    },
-    {
-        "name": "スプラスピナー",
-        "category": "スピナー",
-        "range": 2,
-        "kill": 2,
-        "ink": 3
-    },
-    {
-        "name": "ノーチラス47",
-        "category": "スピナー",
-        "range": 2,
-        "kill": 3,
-        "ink": 2
-    },
-    {
-        "name": "バレルスピナー",
-        "category": "スピナー",
-        "range": 3,
-        "kill": 2,
-        "ink": 3
-    },
-    {
-        "name": "クーゲルシュライバー",
-        "category": "スピナー",
-        "range": 3,
-        "kill": 2,
-        "ink": 3
-    },
-    {
-        "name": "ハイドラント",
-        "category": "スピナー",
-        "range": 3,
-        "kill": 3,
-        "ink": 1
-    },
-    {
-        "name": "スパッタリー",
-        "category": "マニューバー",
-        "range": 1,
-        "kill": 3,
-        "ink": 3
-    },
-    {
-        "name": "スプラマニューバー",
-        "category": "マニューバー",
-        "range": 1,
-        "kill": 2,
-        "ink": 2
-    },
-    {
-        "name": "クアッドホッパー",
-        "category": "マニューバー",
-        "range": 2,
-        "kill": 2,
-        "ink": 1
-    },
-    {
-        "name": "ケルビン525",
-        "category": "マニューバー",
-        "range": 2,
-        "kill": 2,
-        "ink": 1
-    },
-    {
-        "name": "デュアルスイーパー",
-        "category": "マニューバー",
-        "range": 2,
-        "kill": 2,
-        "ink": 2
-    },
-    {
-        "name": "パラシェルター",
-        "category": "シェルター",
-        "range": 1,
-        "kill": 2,
-        "ink": 2
-    },
-    {
-        "name": "スパイガジェット",
-        "category": "シェルター",
-        "range": 1,
-        "kill": 1,
-        "ink": 2
-    },
-    {
-        "name": "キャンピングシェルター",
-        "category": "シェルター",
-        "range": 2,
-        "kill": 2,
-        "ink": 2
-    },
-    {
         "name": "LACT-450",
         "category": "ストリンガー",
         "range": 2,
@@ -382,19 +396,5 @@
         "range": 3,
         "kill": 2,
         "ink": 1
-    },
-    {
-        "name": "ドライブワイパー",
-        "category": "ワイパー",
-        "range": 2,
-        "kill": 2,
-        "ink": 2
-    },
-    {
-        "name": "ジムワイパー",
-        "category": "ワイパー",
-        "range": 2,
-        "kill": 3,
-        "ink": 2
     }
 ]
