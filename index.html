@@ -11,7 +11,7 @@
     <p>スプラトゥーン3 ブキセレクター</p>
     <p>射程：
         <select id="range" name="range">
-            <option value="-1">おまかせ</option>
+            <option value="-1">指定なし</option>
             <option value="3">長い</option>
             <option value="2">普通</option>
             <option value="1">短い</option>
@@ -20,7 +20,7 @@
 
     <p>キル：
         <select id="kill" name="kill">
-        <option value="-1">おまかせ</option>
+        <option value="-1">指定なし</option>
         <option value="3">強い</option>
         <option value="2">普通</option>
         <option value="1">弱い</option>
@@ -29,7 +29,7 @@
 
     <p>塗り：
         <select id="ink" name="ink">
-        <option value="-1">おまかせ</option>
+        <option value="-1">指定なし</option>
         <option value="3">強い</option>
         <option value="2">普通</option>
         <option value="1">弱い</option>
@@ -37,7 +37,8 @@
     </p>
 
     <p>
-        <input type="submit" onclick="buttonClick();" />
+        <input type="submit" value="ブキ検索" onclick="onSearchButton();" />
+        <input type="submit" value="編成作成" onclick="onCreateButton();" />
     </p>
 
     <table id="result"></table>
