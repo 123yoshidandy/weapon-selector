@@ -9,37 +9,86 @@
 
 <body>
     <p>スプラトゥーン3 ブキセレクター</p>
-    <p>射程：
-        <select id="range" name="range">
-            <option value="-1">指定なし</option>
-            <option value="3">長い</option>
-            <option value="2">普通</option>
-            <option value="1">短い</option>
-        </select>
-    </p>
 
-    <p>キル：
-        <select id="kill" name="kill">
-        <option value="-1">指定なし</option>
-        <option value="3">強い</option>
-        <option value="2">普通</option>
-        <option value="1">弱い</option>
-    </select>
-    </p>
+    <table>
+        <tr>
+            <td>
+                <p>ブキ検索</p>
+                <p>種別：
+                    <select id="category" name="category">
+                        <option value="-1">指定なし</option>
+                        <option value="シューター">シューター</option>
+                        <option value="マニューバー">マニューバー</option>
+                        <option value="ブラスター">ブラスター</option>
+                        <option value="フデ">フデ</option>
+                        <option value="ローラー">ローラー</option>
+                        <option value="スロッシャー">スロッシャー</option>
+                        <option value="ワイパー">ワイパー</option>
+                        <option value="シェルター">シェルター</option>
+                        <option value="スピナー">スピナー</option>
+                        <option value="チャージャー">チャージャー</option>
+                        <option value="ストリンガー">ストリンガー</option>
+                    </select>
+                </p>
 
-    <p>塗り：
-        <select id="ink" name="ink">
-        <option value="-1">指定なし</option>
-        <option value="3">強い</option>
-        <option value="2">普通</option>
-        <option value="1">弱い</option>
-    </select>
-    </p>
+                <p>射程：
+                    <select id="range" name="range">
+                        <option value="-1">指定なし</option>
+                        <option value="3">長い</option>
+                        <option value="2">普通</option>
+                        <option value="1">短い</option>
+                    </select>
+                </p>
 
-    <p>
-        <input type="submit" value="ブキ検索" onclick="onSearchButton();" />
-        <input type="submit" value="編成作成" onclick="onCreateButton();" />
-    </p>
+                <p>キル：
+                    <select id="kill" name="kill">
+                        <option value="-1">指定なし</option>
+                        <option value="3">強い</option>
+                        <option value="2">普通</option>
+                        <option value="1">弱い</option>
+                    </select>
+                </p>
+
+                <p>塗り：
+                    <select id="ink" name="ink">
+                        <option value="-1">指定なし</option>
+                        <option value="3">強い</option>
+                        <option value="2">普通</option>
+                        <option value="1">弱い</option>
+                    </select>
+                </p>
+
+                <input type="submit" onclick="onSearchButton();" />
+
+            </td>
+            <td>
+                <p>編成作成</p>
+
+                <p>編成パターン：
+                    <select id="pattern" name="pattern">
+                        <option value="-1">指定なし</option>
+                        <option value="3221">長中中短</option>
+                        <option value="3211">長中短短</option>
+                        <option value="2221">中中中短</option>
+                        <option value="2211">中中短短</option>
+                    </select>
+                </p>
+
+                <p>長射程枠：
+                    <select id="long" name="long">
+                        <option value="-1">指定なし</option>
+                        <option value="シューター">シューター</option>
+                        <option value="スロッシャー">スロッシャー</option>
+                        <option value="スピナー">スピナー</option>
+                        <option value="チャージャー">チャージャー</option>
+                        <option value="ストリンガー">ストリンガー</option>
+                    </select>
+                </p>
+
+                <input type="submit" onclick="onCreateButton();" />
+            </td>
+        </tr>
+    </table>
 
     <table id="result"></table>
 

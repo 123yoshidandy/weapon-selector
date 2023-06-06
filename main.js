@@ -4,10 +4,13 @@ async function onSearchButton() {
     });
 
     // フォームの入力情報を取得
+    let category = document.getElementById("category").value;
     let range = document.getElementById("range").value;
     let kill = document.getElementById("kill").value;
     let ink = document.getElementById("ink").value;
 
+    console.log("category");
+    console.log(category);
     console.log("range");
     console.log(range);
     console.log("kill");
@@ -17,17 +20,19 @@ async function onSearchButton() {
 
     let tmp = [];
     for (let i = 0; i < weapons.length; i++) {
-        if (range == -1 || weapons[i].range == range) {
-            if (kill == -1 || weapons[i].kill == kill) {
-                if (ink == -1 || weapons[i].ink == ink) {
-                    tmp.push(weapons[i]);
+        if (category == -1 || weapons[i].category == category) {
+            if (range == -1 || weapons[i].range == range) {
+                if (kill == -1 || weapons[i].kill == kill) {
+                    if (ink == -1 || weapons[i].ink == ink) {
+                        tmp.push(weapons[i]);
+                    }
                 }
             }
         }
     }
     weapons = tmp;
 
-    arrayShuffle(weapons);
+    // arrayShuffle(weapons);
 
     // 結果表示
     let result = document.getElementById("result");
@@ -80,42 +85,47 @@ async function onCreateButton() {
     });
 
     // フォームの入力情報を取得
-    let range = document.getElementById("range").value;
-    let kill = document.getElementById("kill").value;
-    let ink = document.getElementById("ink").value;
+    let pattern = document.getElementById("pattern").value;
+    let long = document.getElementById("long").value;
 
-    console.log("range");
-    console.log(range);
-    console.log("kill");
-    console.log(kill);
-    console.log("ink");
-    console.log(ink);
+    console.log("pattern");
+    console.log(pattern);
+    console.log("long");
+    console.log(long);
 
-    let team = [weapons[Math.floor(Math.random() * (weapons.length))]];
+    let team = [];
+    for (let i = 0; i < 4; i++) {
+        r = pattern[i];
 
-    let tmp = [];
-    for (let i = 0; i < weapons.length; i++) {
-        if (weapons[i].range == 3) {
-            tmp.push(weapons[i]);
+        let tmp = [];
+        for (let j = 0; j < weapons.length; j++) {
+
+            // ブキカテゴリ重複チェック
+            if (weapons[j].category != "シューター" && weapons[j].category != "マニューバー") { // シューターおよびマニューバーは重複しても良い
+                let isDuplicated = false;
+                for (let t = 0; t < i; t++) {
+                    if (team[t].category == weapons[j].category) {
+                        isDuplicated = true; // ピック済に同カテゴリのブキがあれば重複フラグを立てる
+                    }
+                }
+                if (isDuplicated) {
+                    continue;
+                }
+            }
+
+            // ブキの抽出
+            if (weapons[j].range == r) { // 同射程ならば
+                if (pattern[i] != "3") { // 中短射程ならば
+                    tmp.push(weapons[j]);
+                } else { // 長射程ならば
+                    if (long == "-1" || weapons[j].category == long) { // 長射程の指定カテゴリならば
+                        tmp.push(weapons[j]);
+                    }
+                }
+            }
         }
+        team.push(tmp[Math.floor(Math.random() * (tmp.length))]); // 候補群からランダムにピック
     }
-    team.push(tmp[Math.floor(Math.random() * (tmp.length))]);
-
-    tmp = [];
-    for (let i = 0; i < weapons.length; i++) {
-        if (weapons[i].kill == 3) {
-            tmp.push(weapons[i]);
-        }
-    }
-    team.push(tmp[Math.floor(Math.random() * (tmp.length))]);
-
-    tmp = [];
-    for (let i = 0; i < weapons.length; i++) {
-        if (weapons[i].ink == 3) {
-            tmp.push(weapons[i]);
-        }
-    }
-    team.push(tmp[Math.floor(Math.random() * (tmp.length))]);
 
     // 結果表示
     let result = document.getElementById("result");
