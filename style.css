@@ -10,3 +10,11 @@ table {
 td {
     border: 1px solid #000000;
 }
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+}
