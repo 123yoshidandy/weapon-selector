@@ -93,6 +93,10 @@ async function onCreateButton() {
     console.log("long");
     console.log(long);
 
+    if (pattern == -1) {
+        pattern = ["3221", "3211", "2221", "2211"][Math.floor(Math.random() * 4)]
+    }
+
     let team = [];
     for (let i = 0; i < 4; i++) {
         r = pattern[i];
@@ -105,6 +109,19 @@ async function onCreateButton() {
                 let isDuplicated = false;
                 for (let t = 0; t < i; t++) {
                     if (team[t].category == weapons[j].category) {
+                        isDuplicated = true; // ピック済に同カテゴリのブキがあれば重複フラグを立てる
+                    }
+                }
+                if (isDuplicated) {
+                    continue;
+                }
+            }
+
+            // 弱塗りブキ重複チェック
+            if (weapons[j].ink == 1) { // 弱塗りブキならば
+                let isDuplicated = false;
+                for (let t = 0; t < i; t++) {
+                    if (team[t].ink == 1) {
                         isDuplicated = true; // ピック済に同カテゴリのブキがあれば重複フラグを立てる
                     }
                 }
