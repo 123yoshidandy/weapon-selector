@@ -52,16 +52,24 @@ async function onSearchButton() {
     td = tr.insertCell(-1);
     td.textContent = "塗り";
 
+    let colorId = Math.floor(Math.random() * (weapons.length));
     for (let i = 0; i < weapons.length; i++) {
         tr = result.insertRow(-1);
         td = tr.insertCell(-1);
         td.textContent = i + 1;
+        if (i == colorId) {
+            td.style.backgroundColor = "#ff4444";
+        }
+
         td = tr.insertCell(-1);
         td.textContent = weapons[i].name;
+
         td = tr.insertCell(-1);
         td.textContent = weapons[i].range;
+
         td = tr.insertCell(-1);
         td.textContent = weapons[i].kill;
+
         td = tr.insertCell(-1);
         td.textContent = weapons[i].ink;
     }
