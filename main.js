@@ -96,7 +96,7 @@ async function onCreateButton() {
     let text = await fetch("https://raw.githubusercontent.com/123yoshidandy/weapon-selector/main/weapons.csv", {}).then(response => {
         return response.text();
     });
-    let lines = text.split("\r\n");
+    let lines = text.split("\n");
     let weapons = [];
     let columns = lines[0].split(",");
     for (let i = 1; i < lines.length; i++) {
