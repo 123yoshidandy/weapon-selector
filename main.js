@@ -113,31 +113,34 @@ async function onCreateButton() {
         for (let j = 0; j < weapons.length; j++) {
 
             // ブキカテゴリ重複チェック
-            if (weapons[j].category != "シューター" && weapons[j].category != "マニューバー") { // シューターおよびマニューバーは重複しても良い
-                let isDuplicated = false;
-                for (let t = 0; t < i; t++) {
-                    if (team[t].category == weapons[j].category) {
-                        isDuplicated = true; // ピック済に同カテゴリのブキがあれば重複フラグを立てる
+            if (document.getElementById('duplicate_category').checked) {
+                if (weapons[j].category != "シューター" && weapons[j].category != "マニューバー") { // シューターおよびマニューバーは重複しても良い
+                    let isDuplicated = false;
+                    for (let t = 0; t < i; t++) {
+                        if (team[t].category == weapons[j].category) {
+                            isDuplicated = true; // ピック済に同カテゴリのブキがあれば重複フラグを立てる
+                        }
                     }
-                }
-                if (isDuplicated) {
-                    continue;
+                    if (isDuplicated) {
+                        continue;
+                    }
                 }
             }
 
             // 弱塗りブキ重複チェック
-            if (weapons[j].ink == 1) { // 弱塗りブキならば
-                let isDuplicated = false;
-                for (let t = 0; t < i; t++) {
-                    if (team[t].ink == 1) {
-                        isDuplicated = true; // ピック済に同カテゴリのブキがあれば重複フラグを立てる
+            if (document.getElementById('duplicate_weak_ink').checked) {
+                if (weapons[j].ink == 1) { // 弱塗りブキならば
+                    let isDuplicated = false;
+                    for (let t = 0; t < i; t++) {
+                        if (team[t].ink == 1) {
+                            isDuplicated = true; // ピック済に同カテゴリのブキがあれば重複フラグを立てる
+                        }
+                    }
+                    if (isDuplicated) {
+                        continue;
                     }
                 }
-                if (isDuplicated) {
-                    continue;
-                }
             }
-
             // ブキの抽出
             if (weapons[j].range == r) { // 同射程ならば
                 if (pattern[i] != "3") { // 中短射程ならば

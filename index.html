@@ -14,8 +14,8 @@
         <tr>
             <td>
                 <p>ブキ検索</p>
-                <p>種別：
-                    <select id="category" name="category">
+                <p>カテゴリ：
+                    <select id="category">
                         <option value="-1">指定なし</option>
                         <option value="シューター">シューター</option>
                         <option value="マニューバー">マニューバー</option>
@@ -32,7 +32,7 @@
                 </p>
 
                 <p>射程：
-                    <select id="range" name="range">
+                    <select id="range">
                         <option value="-1">指定なし</option>
                         <option value="3">長い</option>
                         <option value="2">普通</option>
@@ -41,7 +41,7 @@
                 </p>
 
                 <p>キル：
-                    <select id="kill" name="kill">
+                    <select id="kill">
                         <option value="-1">指定なし</option>
                         <option value="3">強い</option>
                         <option value="2">普通</option>
@@ -50,7 +50,7 @@
                 </p>
 
                 <p>塗り：
-                    <select id="ink" name="ink">
+                    <select id="ink">
                         <option value="-1">指定なし</option>
                         <option value="3">強い</option>
                         <option value="2">普通</option>
@@ -65,7 +65,7 @@
                 <p>編成作成</p>
 
                 <p>編成パターン：
-                    <select id="pattern" name="pattern">
+                    <select id="pattern">
                         <option value="-1">指定なし</option>
                         <option value="3221">長中中短</option>
                         <option value="3211">長中短短</option>
@@ -75,7 +75,7 @@
                 </p>
 
                 <p>長射程枠：
-                    <select id="long" name="long">
+                    <select id="long">
                         <option value="-1">指定なし</option>
                         <option value="シューター">シューター</option>
                         <option value="スロッシャー">スロッシャー</option>
@@ -83,6 +83,13 @@
                         <option value="チャージャー">チャージャー</option>
                         <option value="ストリンガー">ストリンガー</option>
                     </select>
+                </p>
+
+                <p>
+                    <input id="duplicate_category" type="checkbox" checked>シューター、マニューバー以外のブキカテゴリの重複を避ける
+                </p>
+                <p>
+                    <input id="duplicate_weak_ink" type="checkbox" checked>塗りが弱いブキの重複を避ける
                 </p>
 
                 <input type="submit" onclick="onCreateButton();" />
