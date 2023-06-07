@@ -56,6 +56,10 @@ async function onSearchButton() {
     td = tr.insertCell(-1);
     td.textContent = "ブキ";
     td = tr.insertCell(-1);
+    td.textContent = "サブ";
+    td = tr.insertCell(-1);
+    td.textContent = "スペシャル";
+    td = tr.insertCell(-1);
     td.textContent = "射程";
     td = tr.insertCell(-1);
     td.textContent = "キル";
@@ -73,13 +77,14 @@ async function onSearchButton() {
 
         td = tr.insertCell(-1);
         td.textContent = weapons[i].name;
-
+        td = tr.insertCell(-1);
+        td.textContent = weapons[i].sub;
+        td = tr.insertCell(-1);
+        td.textContent = weapons[i].special;
         td = tr.insertCell(-1);
         td.textContent = weapons[i].range;
-
         td = tr.insertCell(-1);
         td.textContent = weapons[i].kill;
-
         td = tr.insertCell(-1);
         td.textContent = weapons[i].ink;
     }
@@ -123,7 +128,7 @@ async function onCreateButton() {
         for (let j = 0; j < weapons.length; j++) {
 
             // ブキ重複チェック
-            if (document.getElementById('duplicate_weapon').checked) {
+            if (document.getElementById('duplicate_main').checked) {
                 let isDuplicated = false;
                 for (let t = 0; t < i; t++) {
                     if (team[t].main == weapons[j].main) {
@@ -164,6 +169,33 @@ async function onCreateButton() {
                     }
                 }
             }
+
+            // サブ重複チェック
+            if (document.getElementById('duplicate_sub').checked) {
+                let isDuplicated = false;
+                for (let t = 0; t < i; t++) {
+                    if (team[t].sub == weapons[j].sub) {
+                        isDuplicated = true; // ピック済に同じサブのブキがあれば重複フラグを立てる
+                    }
+                }
+                if (isDuplicated) {
+                    continue;
+                }
+            }
+
+            // スペシャル重複チェック
+            if (document.getElementById('duplicate_special').checked) {
+                let isDuplicated = false;
+                for (let t = 0; t < i; t++) {
+                    if (team[t].special == weapons[j].special) {
+                        isDuplicated = true; // ピック済に同じスペシャルのブキがあれば重複フラグを立てる
+                    }
+                }
+                if (isDuplicated) {
+                    continue;
+                }
+            }
+
             // ブキの抽出
             if (weapons[j].range == r) { // 同射程ならば
                 if (pattern[i] != "3") { // 中短射程ならば
@@ -190,6 +222,10 @@ async function onCreateButton() {
     td = tr.insertCell(-1);
     td.textContent = "ブキ";
     td = tr.insertCell(-1);
+    td.textContent = "サブ";
+    td = tr.insertCell(-1);
+    td.textContent = "スペシャル";
+    td = tr.insertCell(-1);
     td.textContent = "射程";
     td = tr.insertCell(-1);
     td.textContent = "キル";
@@ -202,6 +238,10 @@ async function onCreateButton() {
         td.textContent = i + 1;
         td = tr.insertCell(-1);
         td.textContent = team[i].name;
+        td = tr.insertCell(-1);
+        td.textContent = team[i].sub;
+        td = tr.insertCell(-1);
+        td.textContent = team[i].special;
         td = tr.insertCell(-1);
         td.textContent = team[i].range;
         td = tr.insertCell(-1);
