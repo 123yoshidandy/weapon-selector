@@ -122,6 +122,19 @@ async function onCreateButton() {
         let tmp = [];
         for (let j = 0; j < weapons.length; j++) {
 
+            // ブキ重複チェック
+            if (document.getElementById('duplicate_weapon').checked) {
+                let isDuplicated = false;
+                for (let t = 0; t < i; t++) {
+                    if (team[t].main == weapons[j].main) {
+                        isDuplicated = true; // ピック済に同じメインのブキがあれば重複フラグを立てる
+                    }
+                }
+                if (isDuplicated) {
+                    continue;
+                }
+            }
+
             // ブキカテゴリ重複チェック
             if (document.getElementById('duplicate_category').checked) {
                 if (weapons[j].category != "シューター" && weapons[j].category != "マニューバー") { // シューターおよびマニューバーは重複しても良い
@@ -143,7 +156,7 @@ async function onCreateButton() {
                     let isDuplicated = false;
                     for (let t = 0; t < i; t++) {
                         if (team[t].ink == 1) {
-                            isDuplicated = true; // ピック済に同カテゴリのブキがあれば重複フラグを立てる
+                            isDuplicated = true; // ピック済に塗りが弱いブキがあれば重複フラグを立てる
                         }
                     }
                     if (isDuplicated) {
