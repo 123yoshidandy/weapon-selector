@@ -1,19 +1,5 @@
 async function onSearchButton() {
-
-    // ブキデータファイルの読み込み
-    let text = await fetch("weapons.csv", {}).then(response => {
-        return response.text();
-    });
-    let lines = text.split("\n");
-    let weapons = [];
-    let columns = lines[0].split(",");
-    for (let i = 1; i < lines.length; i++) {
-        let tmp = lines[i].split(",");
-        weapons.push({});
-        for (let j = 0; j < columns.length; j++) {
-            weapons[i - 1][columns[j]] = tmp[j];
-        }
-    }
+    let weapons = await loadWeapons();
 
     // フォームの入力情報を取得
     let category = document.getElementById("category").value;
@@ -91,21 +77,7 @@ async function onSearchButton() {
 }
 
 async function onCreateButton() {
-
-    // ブキデータファイルの読み込み
-    let text = await fetch("weapons.csv", {}).then(response => {
-        return response.text();
-    });
-    let lines = text.split("\n");
-    let weapons = [];
-    let columns = lines[0].split(",");
-    for (let i = 1; i < lines.length; i++) {
-        let tmp = lines[i].split(",");
-        weapons.push({});
-        for (let j = 0; j < columns.length; j++) {
-            weapons[i - 1][columns[j]] = tmp[j];
-        }
-    }
+    let weapons = await loadWeapons();
 
     // フォームの入力情報を取得
     let pattern = document.getElementById("pattern").value;
@@ -249,4 +221,22 @@ async function onCreateButton() {
         td = tr.insertCell(-1);
         td.textContent = team[i].ink;
     }
+}
+
+async function loadWeapons() {
+    let text = await fetch("weapons.csv", {}).then(response => {
+        return response.text();
+    });
+    let lines = text.split("\n");
+    let weapons = [];
+    let columns = lines[0].replace("\r", "").split(",");
+    for (let i = 1; i < lines.length; i++) {
+        let tmp = lines[i].replace("\r", "").split(",");
+        weapons.push({});
+        for (let j = 0; j < columns.length; j++) {
+            weapons[i - 1][columns[j]] = tmp[j];
+        }
+    }
+
+    return weapons;
 }
