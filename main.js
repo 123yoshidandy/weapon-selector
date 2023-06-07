@@ -1,7 +1,19 @@
 async function onSearchButton() {
-    weapons = await fetch("weapons.json", {}).then(response => {
-        return response.json();
+
+    // ブキデータファイルの読み込み
+    let text = await fetch("weapons.csv", {}).then(response => {
+        return response.text();
     });
+    let lines = text.split("\r\n");
+    let weapons = [];
+    let columns = lines[0].split(",");
+    for (let i = 1; i < lines.length; i++) {
+        let tmp = lines[i].split(",");
+        weapons.push({});
+        for (let j = 0; j < columns.length; j++) {
+            weapons[i - 1][columns[j]] = tmp[j];
+        }
+    }
 
     // フォームの入力情報を取得
     let category = document.getElementById("category").value;
@@ -31,8 +43,6 @@ async function onSearchButton() {
         }
     }
     weapons = tmp;
-
-    // arrayShuffle(weapons);
 
     // 結果表示
     let result = document.getElementById("result");
@@ -75,22 +85,22 @@ async function onSearchButton() {
     }
 }
 
-function arrayShuffle(array) {
-    for (let i = (array.length - 1); 0 < i; i--) {
-        let r = Math.floor(Math.random() * (i + 1)); // 0〜(i+1)の範囲で値を取得
-
-        // 要素の並び替えを実行
-        let tmp = array[i];
-        array[i] = array[r];
-        array[r] = tmp;
-    }
-    return array;
-}
-
 async function onCreateButton() {
-    weapons = await fetch("weapons.json", {}).then(response => {
-        return response.json();
+
+    // ブキデータファイルの読み込み
+    let text = await fetch("weapons.csv", {}).then(response => {
+        return response.text();
     });
+    let lines = text.split("\r\n");
+    let weapons = [];
+    let columns = lines[0].split(",");
+    for (let i = 1; i < lines.length; i++) {
+        let tmp = lines[i].split(",");
+        weapons.push({});
+        for (let j = 0; j < columns.length; j++) {
+            weapons[i - 1][columns[j]] = tmp[j];
+        }
+    }
 
     // フォームの入力情報を取得
     let pattern = document.getElementById("pattern").value;
