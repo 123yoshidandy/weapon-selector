@@ -1,7 +1,7 @@
 async function onSearchButton() {
 
     // ブキデータファイルの読み込み
-    let text = await fetch("https://raw.githubusercontent.com/123yoshidandy/weapon-selector/main/weapons.csv", {}).then(response => {
+    let text = await fetch("weapons.csv", {}).then(response => {
         return response.text();
     });
     let lines = text.split("\r\n");
@@ -93,7 +93,7 @@ async function onSearchButton() {
 async function onCreateButton() {
 
     // ブキデータファイルの読み込み
-    let text = await fetch("https://raw.githubusercontent.com/123yoshidandy/weapon-selector/main/weapons.csv", {}).then(response => {
+    let text = await fetch("weapons.csv", {}).then(response => {
         return response.text();
     });
     let lines = text.split("\n");
